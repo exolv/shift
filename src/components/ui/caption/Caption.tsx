@@ -1,9 +1,10 @@
 import React from 'react';
 
-type CaptionPropsColor = 'dark-navy' | 'regent-gray';
+type CaptionPropsColor = 'dark-navy' | 'regent-gray' | 'royal-blue';
 const CaptionPropsColorMap = {
   'dark-navy': 'text-dark-navy',
-  'regent-gray': 'text-regent-gray'
+  'regent-gray': 'text-regent-gray',
+  'royal-blue': 'text-royal-blue'
 };
 
 type CaptionPropsWeight = 'regular' | 'medium';
@@ -26,7 +27,7 @@ const Caption: React.FC<CaptionProps> = ({
   className = ''
 }) => {
   return (
-    <span className={`font-montserrat ${CaptionPropsColorMap[color]} text-xs ${CaptionPropsWeightMap[weight]} leading-relaxed ${className}`}>{children}</span>
+    <span className={`font-montserrat ${CaptionPropsColorMap[color]} text-xs ${CaptionPropsWeightMap[weight]} leading-relaxed tracking-wide ${className}`}>{children}</span>
   );
 };
 

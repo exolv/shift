@@ -5,11 +5,11 @@ import Title from '@components/ui/title/Title';
 import Caption from '@components/ui/caption/Caption';
 import Progress from '@components/ui/progress/Progress';
 import Stats from '@components/ui/stats/Stats';
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import { InformationCircleIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 const Sidebar: React.FC = () => {
   return (
-    <div className='bg-white p-10 w-1/5 h-full flex flex-col justify-between shadow-sidebar'>
+    <div className='bg-white p-10 w-1/4 h-full flex flex-col justify-between shadow-sidebar'>
       <div className='w-[100px]'>
         <img src={shiftLogo} alt='shift' />
       </div>
@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
       </div>
       <div className='flex justify-between gap-x-4'>
         <Stats icon={<QuestionMarkCircleIcon />} title='Întrebări' value='24' className='w-full' />
-        <Stats icon={<QuestionMarkCircleIcon />} title='Răspunsuri' value='6' className='w-full' />
+        <Stats icon={<InformationCircleIcon />} title='Răspunsuri' value='6' className='w-full' />
       </div>
       <div className='mt-10 text-center'>
         <Caption className='block'>Toate datele sunt colectate și stocate într-un mod securizat.</Caption>
