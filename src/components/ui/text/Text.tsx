@@ -25,7 +25,7 @@ const Text: React.FC<TextProps> = ({
   className = ''
 }) => {
   return (
-    <h1 className={`font-montserrat ${TextPropsColorMap[color]} ${TextPropsSizeMap[size]} font-regular ${className}`}>{children}</h1>
+    <h1 className={`font-montserrat ${TextPropsColorMap[color]} ${TextPropsSizeMap[size]} font-regular leading-relaxed ${className}`}>{children}</h1>
   );
 };
 

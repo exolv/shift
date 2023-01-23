@@ -17,6 +17,7 @@ interface ButtonProps {
   rightArrow?: JSX.Element;
   leftArrow?: JSX.Element;
   disabled?: boolean;
+  onClick?: () => void;
   className?: string;
 };
 
@@ -26,22 +27,27 @@ const Button: React.FC<ButtonProps> = ({
   rightArrow = <></>,
   leftArrow = <></>,
   disabled = false,
+  onClick = undefined,
   className = ''
 }) => {
   let _rightArrow, _leftArrow;
   if (rightArrow) {
     _rightArrow = React.cloneElement(rightArrow, {
-      className: `w-6 h-6 ${ButtonIconPropsColorMap[color]}`
+      className: `w-6 h-6 ${ButtonIconPropsColorMap[color]} leading-none`
     });
   }
   if (leftArrow) {
     _leftArrow = React.cloneElement(leftArrow, {
-      className: `w-6 h-6 ${ButtonIconPropsColorMap[color]}`
+      className: `w-6 h-6 ${ButtonIconPropsColorMap[color]} leading-none`
     });
   }
 
   return (
-    <button className={`flex flex-row items-center justify-center gap-x-10 text-xs px-5 py-3 rounded-xl ${ButtonPropsColorMap[color]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`} disabled={disabled}>
+    <button
+      className={`flex flex-row items-center justify-center gap-x-10 text-xs px-5 py-3 h-[50px] rounded-xl ${ButtonPropsColorMap[color]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {_leftArrow}
       <span className='font-montserrat font-semibold'>{children}</span>
       {_rightArrow}

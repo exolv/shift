@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '@components/sidebar/Sidebar';
 import Title from '@components/ui/title/Title';
 import Caption from '@components/ui/caption/Caption';
 import Text from '@components/ui/text/Text';
 import Button from '@components/ui/button/Button';
+import Modal from '@components/ui/modal/Modal';
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 import MultipleChoice from '@components/ui/multiple-choice/MultipleChoice';
 import Rating from '@components/ui/rating/Rating';
 
 const Platform: React.FC = () => {
+  const [toggled, setToggled] = useState(true);
+
   return (
     <div className='flex h-screen'>
+      <Modal
+        title='Rezultatul tău final contează.'
+        text='Un rezultat pozitiv al chestionarului îți va oferi atât o viziune clară asupra capabilității tale pentru reconversie, cât și oportunitatea de a învăța în platforma educatională Shift.'
+        buttons={[
+          <Button color='royal-blue' onClick={() => setToggled(false)}>Să începem!</Button>
+        ]}
+        toggled={toggled}
+      />
+
       <Sidebar />
 
       <div className='h-full w-full p-10'>
