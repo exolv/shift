@@ -6,12 +6,14 @@ type MultipleChoicePropsOption = {
   checked: boolean;
 };
 interface MultipleChoiceProps {
+  name: string;
   options: MultipleChoicePropsOption[];
   onChange?: (options: MultipleChoicePropsOption[]) => void;
   className?: string;
 };
 
 const MultipleChoice: React.FC<MultipleChoiceProps> = ({
+  name,
   options,
   onChange = undefined,
   className = ''
@@ -29,7 +31,7 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({
         return option;
       }
     });
-    setOptions(__options);    
+    setOptions(__options);
 
     if (onChange) {
       onChange(__options);
@@ -43,7 +45,7 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({
           <input
             type='checkbox'
             id={option.value}
-            name={option.value}
+            name={name}
             onChange={handleChange}
             className='appearance-none cursor-pointer absolute w-full h-full top-0 left-0 right-0 bottom-0'
           />

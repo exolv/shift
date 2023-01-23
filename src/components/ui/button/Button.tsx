@@ -16,6 +16,7 @@ interface ButtonProps {
   color?: ButtonPropsColor;
   rightArrow?: JSX.Element;
   leftArrow?: JSX.Element;
+  disabled?: boolean;
   className?: string;
 };
 
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   color = 'royal-blue',
   rightArrow = <></>,
   leftArrow = <></>,
+  disabled = false,
   className = ''
 }) => {
   let _rightArrow, _leftArrow;
@@ -39,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button className={`flex flex-row items-center justify-center gap-x-10 text-xs px-5 py-3 rounded-xl ${ButtonPropsColorMap[color]} ${className}`}>
+    <button className={`flex flex-row items-center justify-center gap-x-10 text-xs px-5 py-3 rounded-xl ${ButtonPropsColorMap[color]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`} disabled={disabled}>
       {_leftArrow}
       <span className='font-montserrat font-semibold'>{children}</span>
       {_rightArrow}
