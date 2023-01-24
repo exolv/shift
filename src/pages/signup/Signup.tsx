@@ -11,7 +11,7 @@ import Input from '@components/ui/input/Input';
 const Signup: React.FC = () => {
   return (
     <div className='flex h-screen'>
-      <div className='h-full w-2/5 lg:w-1/4 flex flex-col justify-between items-center bg-white p-20'>
+      <div className='h-full w-1/4 flex flex-col justify-between items-center bg-white p-20'>
         <Link to='/'>
           <Logo size='lg' />
         </Link>
