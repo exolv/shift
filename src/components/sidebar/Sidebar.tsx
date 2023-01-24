@@ -9,15 +9,13 @@ import { ArrowRightOnRectangleIcon, CheckCircleIcon, ClockIcon, QuestionMarkCirc
 import { useUser } from '@hooks/useUser';
 import Button from '@components/ui/button/Button';
 import supabase from '@services/supabase';
-import { useNavigate } from 'react-router-dom';
 
 const Sidebar: React.FC = () => {
-  const navigate = useNavigate();
   const user = useUser({ redirect: '/login' });
 
   const signOut = async () => {
     await supabase.auth.signOut();
-    navigate('/');
+    window.location.href = '/';
   };
   
   return (
