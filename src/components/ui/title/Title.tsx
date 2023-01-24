@@ -1,9 +1,10 @@
 import React from 'react';
 
-type TitlePropsSize = 'small' | 'regular';
+type TitlePropsSize = 'small' | 'regular' | 'lg';
 const TitlePropsSizeMap = {
   'small': 'text-base',
-  'regular': 'text-xl'
+  'regular': 'text-xl',
+  'lg': 'text-2xl'
 };
 
 type TitlePropsColor = 'dark-navy' | 'royal-blue';
