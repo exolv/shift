@@ -7,8 +7,8 @@ import Button from '@components/ui/button/Button';
 import Modal from '@components/ui/modal/Modal';
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
-import MultipleChoice from '@components/ui/multiple-choice/MultipleChoice';
-import Rating from '@components/ui/rating/Rating';
+import MultipleChoice from '@components/survey/multiple-choice/MultipleChoice';
+import Rating from '@components/survey/rating/Rating';
 
 const Platform: React.FC = () => {
   const [toggled, setToggled] = useState(true);
@@ -26,11 +26,11 @@ const Platform: React.FC = () => {
 
       <Sidebar />
 
-      <div className='h-full w-full p-10'>
-        <div className='flex'>
+      <div className='h-full w-full flex flex-col justify-between'>
+        <div className='flex p-10'>
           <Title color='royal-blue' size='small'>Salvează progresul</Title>
         </div>
-        <div className='mt-10 mx-auto w-2/3 flex flex-col items-center text-center'>
+        <div className='p-10 mx-auto w-2/3 flex flex-col items-center text-center'>
           <div className='flex items-center mb-10'>
             <Caption color='royal-blue' weight='medium'>7</Caption>
             <Caption weight='medium' className='mx-2'>|</Caption>
@@ -46,10 +46,10 @@ const Platform: React.FC = () => {
             ]} /> */}
             <Rating name='rating' lowest={1} highest={10} />
           </div>
-          <div className='flex justify-around gap-x-10 w-full mt-20'>
-            <Button color='none' leftArrow={<ArrowLongLeftIcon />}>Înapoi</Button>
-            <Button color='royal-blue' rightArrow={<ArrowLongRightIcon />}>Înainte</Button>
-          </div>
+        </div>
+        <div className='flex justify-around gap-x-10 w-full p-10 bg-[#e7e8ed]'>
+          <Button color='none' leftArrow={<ArrowLongLeftIcon />}>Înapoi</Button>
+          <Button color='royal-blue' rightArrow={<ArrowLongRightIcon />}>Înainte</Button>
         </div>
       </div>
     </div>
