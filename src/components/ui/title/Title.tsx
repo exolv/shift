@@ -7,10 +7,11 @@ const TitlePropsSizeMap = {
   'lg': 'text-2xl'
 };
 
-type TitlePropsColor = 'dark-navy' | 'royal-blue';
+type TitlePropsColor = 'dark-navy' | 'royal-blue' | 'white';
 const TitlePropsColorMap = {
   'dark-navy': 'text-dark-navy',
-  'royal-blue': 'text-royal-blue'
+  'royal-blue': 'text-royal-blue',
+  'white': 'text-white'
 };
 
 interface TitleProps {

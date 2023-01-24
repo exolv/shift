@@ -49,6 +49,17 @@ const Signup: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className='h-full w-3/4 bg-login bg-cover bg-center relative'>
+        <div className='absolute w-full h-full top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-dark-navy to-transparent flex items-end'>
+          <div className='p-20 flex flex-col justify-between gap-y-10'>
+            <div className='w-[100px] h-[2px] bg-white'></div>
+            <div>
+              <Title color='white' size='lg' className='mb-2'>Nu arunca banii pe cursuri.</Title>
+              <Title color='white' size='lg'>Reconversia spre IT începe când ești pregătit.</Title>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

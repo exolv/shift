@@ -29,7 +29,8 @@ module.exports = {
         'progress': '0 0 60px rgba(58, 99, 243, 0.2)'
       },
       backgroundImage: {
-        'checked': 'url("/src/assets/checkbox.svg")'
+        'checked': 'url("/src/assets/checkbox.svg")',
+        'login': 'url("/img/login.jpg")'
       }
     },
   },
