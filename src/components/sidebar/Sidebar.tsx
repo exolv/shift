@@ -1,6 +1,6 @@
 import React from 'react';
-import shiftLogo from '../../assets/shift-logo.svg';
 
+import Logo from '@components/logo/Logo';
 import Title from '@components/ui/title/Title';
 import Caption from '@components/ui/caption/Caption';
 import Progress from '@components/ui/progress/Progress';
@@ -10,9 +10,7 @@ import { CheckCircleIcon, ClockIcon, QuestionMarkCircleIcon } from '@heroicons/r
 const Sidebar: React.FC = () => {
   return (
     <div className='bg-white p-10 w-1/4 h-full flex flex-col justify-between shadow-sidebar'>
-      <div className='w-[64px]'>
-        <img src={shiftLogo} alt='shift' />
-      </div>
+      <Logo />
       <div className='mt-8'>
         <Caption className='block'>Titlu:</Caption>
         <Title className='mt-2'>Verifică capabilitatea personală pentru o reconversie în domeniul IT</Title>
