@@ -17,7 +17,7 @@ const Signup: React.FC = () => {
         </Link>
         <div className='w-full text-center'>
           <Title size='lg' className='mb-5'>Înregistrează-te în Shift</Title>
-          <Text>Întrodu email-ul și parola ta pentru a te înregistra.</Text>
+          <Text>Introdu email-ul și parola ta pentru a te înregistra.</Text>
         </div>
         <div className='w-full text-center flex flex-col gap-y-10'>
           <Input
