@@ -1,5 +1,7 @@
 import React from 'react';
 
+type ButtonPropsType = 'submit' | 'button';
+
 type ButtonPropsColor = 'none' | 'royal-blue';
 const ButtonPropsColorMap = {
   'none': 'border border-patient-gray bg-transparent text-dark-navy',
@@ -12,6 +14,7 @@ const ButtonIconPropsColorMap = {
 };
 
 interface ButtonProps {
+  type: ButtonPropsType;
   children: JSX.Element | string;
   color?: ButtonPropsColor;
   rightArrow?: JSX.Element;
@@ -22,6 +25,7 @@ interface ButtonProps {
 };
 
 const Button: React.FC<ButtonProps> = ({
+  type,
   children,
   color = 'royal-blue',
   rightArrow = <></>,
@@ -44,7 +48,8 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={`flex flex-row items-center justify-center gap-x-10 text-xs px-5 py-3 h-[50px] rounded-xl ${ButtonPropsColorMap[color]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
+      type={type}
+      className={`flex flex-row items-center justify-between gap-x-10 text-xs px-5 py-3 h-[50px] rounded-xl ${ButtonPropsColorMap[color]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
       disabled={disabled}
       onClick={onClick}
     >

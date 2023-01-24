@@ -19,7 +19,7 @@ const Platform: React.FC = () => {
         title='Rezultatul tău final contează.'
         text='Un rezultat pozitiv al chestionarului îți va oferi atât o viziune clară asupra capabilității tale pentru reconversie, cât și oportunitatea de a învăța în platforma educatională Shift.'
         buttons={[
-          <Button color='royal-blue' onClick={() => setToggled(false)}>Să începem!</Button>
+          <Button type='button' color='royal-blue' onClick={() => setToggled(false)}>Să începem!</Button>
         ]}
         toggled={toggled}
       />
@@ -48,8 +48,8 @@ const Platform: React.FC = () => {
           </div>
         </div>
         <div className='flex justify-around gap-x-10 w-full p-10 bg-[#e7e8ed]'>
-          <Button color='none' leftArrow={<ArrowLongLeftIcon />}>Înapoi</Button>
-          <Button color='royal-blue' rightArrow={<ArrowLongRightIcon />}>Înainte</Button>
+          <Button type='button' color='none' leftArrow={<ArrowLongLeftIcon />}>Înapoi</Button>
+          <Button type='button' color='royal-blue' rightArrow={<ArrowLongRightIcon />}>Înainte</Button>
         </div>
       </div>
     </div>
