@@ -24,6 +24,9 @@
       ],
       "@services/*": [
         "./src/services/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
       ]
     }
   },

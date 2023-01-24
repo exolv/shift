@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowPathIcon } from '@heroicons/react/24/outline';
 
 type ButtonPropsType = 'submit' | 'button';
 
@@ -20,6 +21,7 @@ interface ButtonProps {
   rightArrow?: JSX.Element;
   leftArrow?: JSX.Element;
   disabled?: boolean;
+  loading?: boolean;
   onClick?: () => void;
   className?: string;
 };
@@ -31,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   rightArrow = <></>,
   leftArrow = <></>,
   disabled = false,
+  loading = false,
   onClick = undefined,
   className = ''
 }) => {
@@ -55,7 +58,8 @@ const Button: React.FC<ButtonProps> = ({
     >
       {_leftArrow}
       <span className='font-montserrat font-semibold'>{children}</span>
-      {_rightArrow}
+      { !loading && _rightArrow }
+      { loading && <ArrowPathIcon className={`w-6 h-6 ${ButtonIconPropsColorMap[color]} leading-none animate-spin`} /> }
     </button>
   );
 };

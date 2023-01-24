@@ -1,10 +1,12 @@
 import React from 'react';
 
-type CaptionPropsColor = 'dark-navy' | 'regent-gray' | 'royal-blue';
+type CaptionPropsColor = 'dark-navy' | 'regent-gray' | 'royal-blue' | 'bittersweet' | 'jellyfish';
 const CaptionPropsColorMap = {
   'dark-navy': 'text-dark-navy',
   'regent-gray': 'text-regent-gray',
-  'royal-blue': 'text-royal-blue'
+  'royal-blue': 'text-royal-blue',
+  'bittersweet': 'text-bittersweet',
+  'jellyfish': 'text-jellyfish'
 };
 
 type CaptionPropsWeight = 'regular' | 'medium';
@@ -16,7 +18,7 @@ const CaptionPropsWeightMap = {
 interface CaptionProps {
   color?: CaptionPropsColor;
   weight?: CaptionPropsWeight;
-  children: JSX.Element | string;
+  children: JSX.Element | string | undefined;
   className?: string;
 };
 

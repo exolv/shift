@@ -5,18 +5,35 @@ import Title from '@components/ui/title/Title';
 import Caption from '@components/ui/caption/Caption';
 import Progress from '@components/ui/progress/Progress';
 import Stats from '@components/ui/stats/Stats';
-import { CheckCircleIcon, ClockIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import { ArrowRightOnRectangleIcon, CheckCircleIcon, ClockIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import { useUser } from '@hooks/useUser';
+import Button from '@components/ui/button/Button';
+import supabase from '@services/supabase';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar: React.FC = () => {
+  const navigate = useNavigate();
+  const user = useUser({ redirect: '/login' });
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    navigate('/');
+  };
+  
   return (
     <div className='bg-white p-10 w-1/4 h-full flex flex-col justify-between shadow-sidebar'>
-      <Logo />
+      <div className='flex justify-between items-center'>
+        <Logo />
+        <Button type='button' color='none' className='px-0 py-0 w-[36px] h-[36px] !justify-center' onClick={signOut}>
+          <ArrowRightOnRectangleIcon className='w-5 h-5 text-dark-navy leading-none' />
+        </Button>
+      </div>
       <div className='mt-8'>
         <Caption className='block'>Titlu:</Caption>
         <Title className='mt-2'>Verifică capabilitatea personală pentru o reconversie în domeniul IT</Title>
         <div className='mt-8'>
           <Caption className='mr-3'>Înregistrat ca:</Caption>
-          <Caption color='dark-navy' weight='medium'>georgebaba99@yahoo.com</Caption>
+          <Caption color='dark-navy' weight='medium'>{user?.email}</Caption>
         </div>
       </div>
       <div className='flex justify-center my-8'>

@@ -13,7 +13,9 @@
     "@supabase/supabase-js": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.7.0"
+    "react-hook-form": "^7.42.1",
+    "react-router-dom": "^6.7.0",
+    "swr": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

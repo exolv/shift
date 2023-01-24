@@ -6,11 +6,14 @@ import Text from '@components/ui/text/Text';
 import Button from '@components/ui/button/Button';
 import Modal from '@components/ui/modal/Modal';
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { useUser } from '@hooks/useUser';
 
 import MultipleChoice from '@components/survey/multiple-choice/MultipleChoice';
 import Rating from '@components/survey/rating/Rating';
 
 const Platform: React.FC = () => {
+  const user = useUser({ redirect: '/login' });
+
   const [toggled, setToggled] = useState(true);
 
   return (
